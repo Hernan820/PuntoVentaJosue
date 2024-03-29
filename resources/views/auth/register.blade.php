@@ -10,12 +10,39 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <div class="text-center mb-3">
+                            <label for="">DATOS EMPRESA</label>
+
+                        </div>
+
+                        
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Nombre Empresa</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="nombre_empresa" value="" required autocomplete="name" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Descripcion de empresa</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="descripcion_empresa" value="" required autocomplete="descripcion" >
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center mb-3">
+                          <label for="">DATOS PERSONALES</label>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" >
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
